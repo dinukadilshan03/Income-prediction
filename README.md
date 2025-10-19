@@ -89,15 +89,3 @@ print(pred)
 
 Refer to `src/predict.py` for the exact input schema expected by `predict_single`.
 
-## Troubleshooting
-
-- Ensure `models/` and `tools/` contain the expected `.pkl` artifacts before running `app.py` or `src.predict`.
-- If you see missing-column errors during prediction, regenerate `data/cleaned.csv` and the preprocessing artifacts using the step above.
-
-## Next steps / contributions
-
-- Add unit tests for `src/` modules and integration tests for the Streamlit flow.
-- Provide a CLI (`tools/` or `src/cli.py`) to run preprocessing, training, and artifact export reproducibly.
-- Package preprocessing + model loading as a lightweight API (FastAPI) for deployment.
-
-If you'd like, I can implement any of the next steps above (tests, CLI, or an API).
