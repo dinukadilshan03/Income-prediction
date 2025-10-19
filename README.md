@@ -1,8 +1,10 @@
 # Income Prediction
 
-[![python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/) [![streamlit](https://img.shields.io/badge/streamlit-demo-orange)](https://incomepredictionfdm.streamlit.app/)
+[![python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/) 
 
-A small, reproducible project that predicts whether an individual's annual income exceeds a threshold (for example >50K) using tabular census-style data. It includes preprocessing pipelines, trained model artifacts, and a minimal Streamlit app for quick, single-record predictions.
+Live app: https://incomepredictionfdm.streamlit.app/
+
+A small, reproducible project that predicts whether an individual's annual income exceeds a threshold (for example >50K) using tabular census-style data. It includes preprocessing pipelines, trained model artifacts, and a Streamlit app for single-record predictions.
 
 ## Table of contents
 
@@ -17,9 +19,9 @@ A small, reproducible project that predicts whether an individual's annual incom
 
 ## Highlights
 
-- End-to-end: raw + cleaned data, preprocessing artifacts, trained model(s), and a demo UI.
+- End-to-end: raw + cleaned data, preprocessing artifacts, trained model(s), and an interactive app.
 - Reusable: notebooks were converted into modular `src/` packages for reuse.
-- Demo: `app.py` provides an interactive Streamlit interface for single-record predictions.
+- App: `app.py` provides an interactive Streamlit interface for single-record predictions.
 
 ## Repository layout
 
@@ -62,9 +64,9 @@ streamlit run app.py
 
 The app shows a simple form to enter features and returns a predicted class and probability.
 
-Hosted demo
+Hosted app
 
-The project is hosted on Streamlit: https://incomepredictionfdm.streamlit.app/ — you can open that URL to try the demo without running locally.
+The project is hosted on Streamlit: https://incomepredictionfdm.streamlit.app/ — open that URL to use the app without running locally.
 
 ## Example usage (script)
 
