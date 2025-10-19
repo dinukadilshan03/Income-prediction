@@ -1,6 +1,6 @@
 # Income Prediction
 
-[![python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/) [![streamlit](https://img.shields.io/badge/streamlit-demo-orange)](#)
+[![python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/) [![streamlit](https://img.shields.io/badge/streamlit-demo-orange)](https://incomepredictionfdm.streamlit.app/)
 
 A small, reproducible project that predicts whether an individual's annual income exceeds a threshold (for example >50K) using tabular census-style data. It includes preprocessing pipelines, trained model artifacts, and a minimal Streamlit app for quick, single-record predictions.
 
@@ -61,6 +61,10 @@ streamlit run app.py
 ```
 
 The app shows a simple form to enter features and returns a predicted class and probability.
+
+Hosted demo
+
+The project is hosted on Streamlit: https://incomepredictionfdm.streamlit.app/ — you can open that URL to try the demo without running locally.
 
 ## Example usage (script)
 
