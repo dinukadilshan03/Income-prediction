@@ -11,6 +11,7 @@ import pandas as pd
 import streamlit as st
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
+from src import utils, preprocess, predict
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
@@ -202,34 +203,20 @@ def canonicalize_race_value(value) -> str:
 
 @st.cache_data(show_spinner=False)
 def load_clean_data() -> pd.DataFrame:
-    """Load the processed dataset used during model training."""
-    return pd.read_csv(DATA_DIR / "cleaned.csv")
+    """Wrapper to `src.utils.load_clean_data` so Streamlit caching works."""
+    return utils.load_clean_data()
 
 
 @st.cache_data(show_spinner=False)
 def load_raw_data() -> pd.DataFrame:
-    """Load the original dataset to source categorical value ranges."""
-    df = pd.read_csv(DATA_DIR / "income.csv")
-    # Align with preprocessing choices made in the notebooks
-    return df.replace("?", "Unknown")
+    """Wrapper to `src.utils.load_raw_data` so Streamlit caching works."""
+    return utils.load_raw_data()
 
 
 @st.cache_resource(show_spinner=False)
 def load_artifacts() -> Tuple[object, object, object | None]:
-    """Load the trained model alongside supporting transformers."""
-    model_path = MODELS_DIR / "best_xgboost_model.pkl"
-    encoder_path = TOOLS_DIR / "education_encoder.pkl"
-    scaler_path = TOOLS_DIR / "hours_scaler.pkl"
-
-    model = joblib.load(model_path)
-    education_encoder = joblib.load(encoder_path)
-
-    try:
-        hours_scaler = joblib.load(scaler_path)
-    except FileNotFoundError:
-        hours_scaler = None
-
-    return model, education_encoder, hours_scaler
+    """Wrapper to `src.utils.load_artifacts` so Streamlit caching works."""
+    return utils.load_artifacts()
 
 
 @st.cache_resource(show_spinner=False)
